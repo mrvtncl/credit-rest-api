@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="credit-rest-api:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>credit-rest-api</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="credit-rest-api-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="credit-rest-api:war exploded" />
+    </root>
+  </artifact>
+</component>
