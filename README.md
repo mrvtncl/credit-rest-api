@@ -17,6 +17,12 @@ Aşağıdaki komut ile uygulama çalıştırabilir.
 
 ```docker-compose up```
 
+## FrontEnd Erişimi
+
+Aşağıdaki url ile Uygulama ekranına ulaşılabilir.
+
+http://localhost:8080/creditservice/index.xhtml
+
 ## Swagger Api Documentation
 
 Aşağıdaki url ile Swagger Apı dokümantasyonuna ulaşılabilir.
