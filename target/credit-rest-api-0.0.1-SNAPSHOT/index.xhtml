@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+    <h:form>
+<p:messages id="messages"/>
+        <p:panel>
+            <f:facet name="header">
+                Kredi Başvurusu
+            </f:facet>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="TC Kimlik Numarası"/>
+                <p:inputText value="#{creditView.creditApp.tckn}" required="true"
+                             requiredMessage="Lütfen TC Kimlik numaranızı 11 hane olarak giriniz." maxlength="11">
+                    <p:keyFilter regEx="	/[\d\-\.]/"/>
+                </p:inputText>
+                <p:outputLabel value="Ad"/>
+                <p:inputText value="#{creditView.creditApp.name}" required="true" style="text-transform: uppercase"
+                             requiredMessage="Lütfen adınızı giriniz."/>
+                <p:outputLabel value="Soyad"/>
+                <p:inputText value="#{creditView.creditApp.lastName}" required="true" style="text-transform: uppercase"
+                             requiredMessage="Lütfen soyadınızı giriniz."/>
+                <p:outputLabel value="Telefon"/>
+                <p:inputText value="#{creditView.creditApp.phone}" required="true"
+                             requiredMessage="Lütfen telefon numaranızı 10 hane olarak giriniz."
+                             maxlength="10">
+                    <p:keyFilter regEx="	/[\d\-\.]/"/>
+                </p:inputText>
+                <p:outputLabel value="Aylık Gelir"/>
+                <p:inputNumber value="#{creditView.creditApp.income}" required="true"
+                               requiredMessage="Lütfen aylık gelirinizi belirtiniz." minValue="0"/>
+                <p:outputLabel/>
+                <p:commandButton value="Başvur" actionListener="#{creditView.applyCredit}"
+                                 update="@form" process="@parent"/>
+
+            </h:panelGrid>
+        </p:panel>
+
+        <br/>
+
+        <p:panel rendered="#{creditView.returnResponse}">
+            <f:facet name="header">
+                Kredi Başvuru Sonucu
+            </f:facet>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Başvuru Numarası" style="font: bolder"/>
+                <p:outputLabel value="#{creditView.response.creditId}"/>
+
+                <p:outputLabel value="Başvuru Durumu" style="font: bolder"/>
+                <p:outputLabel value="#{creditView.response.creditStatus}"/>
+
+                <p:outputLabel value="Kredi Skoru" style="font: bolder"/>
+                <p:outputLabel value="#{creditView.response.creditScore}"/>
+
+                <p:outputLabel value="Kredi Limiti" style="font: bolder"/>
+                <p:outputLabel value="#{creditView.response.creditLimit}"/>
+
+                <p:outputLabel value="Kredi Mesajı" style="font: bolder"/>
+                <p:outputLabel value="#{creditView.response.creditMessage}"/>
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+
+</h:body>
+</html>
