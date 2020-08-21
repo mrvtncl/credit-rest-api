@@ -22,12 +22,12 @@ public class CreditApp extends BaseEntity implements Cloneable {
     }
 
     public CreditApp clone() throws CloneNotSupportedException {
-       return (CreditApp) super.clone();
+        return (CreditApp) super.clone();
     }
 
-    public  CreditApp(String tckn){
+    public CreditApp(String tckn) {
         super();
-        this.tckn=tckn;
+        this.tckn = tckn;
     }
 
     public String getTckn() {
@@ -43,7 +43,7 @@ public class CreditApp extends BaseEntity implements Cloneable {
     }
 
     public void setName(String name) {
-        this.name = name.toUpperCase(new Locale("tr","TR"));
+        this.name = name.toUpperCase(new Locale("tr", "TR"));
     }
 
     public String getLastName() {
@@ -51,7 +51,8 @@ public class CreditApp extends BaseEntity implements Cloneable {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName.toUpperCase(new Locale("tr","TR"));;
+        this.lastName = lastName.toUpperCase(new Locale("tr", "TR"));
+        ;
     }
 
     public String getPhone() {
